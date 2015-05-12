@@ -9,10 +9,10 @@ module.exports = function(grunt) {
 
     jshint: {
       dev: {
-        src: ['Gruntfile.js', 'routes/**/*.js', 'tests/**/*.js']
+        src: ['Gruntfile.js', 'routes/**/*.js', 'tests/**/*.js', 'index.js']
       },
       options: {
-        jshint: true
+        jshintrc: true
       }
     },
 
@@ -25,5 +25,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('linter', ['jshint:dev']);
   grunt.registerTask('tester', ['simplemocha:dev']);
-
+  grunt.registerTask('test_suite', ['linter', 'tester']);
 };
